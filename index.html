@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marcos Vinicius — Front-end &amp; Infraestrutura de Redes</title>
 <meta name="description" content="Portfólio de Marcos Vinicius: desenvolvedor front-end júnior com experiência prática em redes, infraestrutura e segurança eletrônica. São Paulo, BR.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306080d'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%2371D9F5' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%234EE39B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306080d'/%3E%3Cpath d='M12 9 L6 16 L12 23' stroke='%2371D9F5' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20 9 L26 16 L20 23' stroke='%234C8DFF' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='18.5' y1='7' x2='13.5' y2='25' stroke='%23EDF1F7' stroke-width='2.1' stroke-linecap='round'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#06080d">
 
 <meta property="og:type" content="website">
@@ -441,6 +441,66 @@
   @keyframes pingIn{to{opacity:1; transform:translateY(0);}}
   .ping-placeholder{color:var(--muted); opacity:0.75; margin:0;}
 
+  /* ---------- GitHub ao vivo ---------- */
+  .gh-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .gh-panel{
+    border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden;
+    background:linear-gradient(165deg, rgba(255,255,255,0.045), rgba(255,255,255,0.014));
+    box-shadow:var(--shadow); display:flex; flex-direction:column;
+  }
+  .gh-panel-top{
+    display:flex; align-items:center; gap:12px;
+    padding:13px 18px; border-bottom:1px solid var(--line);
+    background:rgba(255,255,255,0.02); flex-shrink:0;
+  }
+  .gh-dots{display:flex; gap:6px;}
+  .gh-dots span{width:9px; height:9px; border-radius:50%; display:block;}
+  .gh-dots span:nth-child(1){background:#ff6259;}
+  .gh-dots span:nth-child(2){background:#ffbd2e;}
+  .gh-dots span:nth-child(3){background:#28c93f;}
+  .gh-panel-name{font-family:var(--mono); font-size:11.5px; color:var(--muted); letter-spacing:0.03em;}
+  .gh-panel-body{padding:8px 6px; min-height:230px; max-height:320px; overflow-y:auto;}
+  .gh-loading, .gh-error{font-family:var(--mono); font-size:12.5px; color:var(--muted); padding:22px 18px; margin:0; line-height:1.6;}
+  .gh-error a{color:var(--cyan);}
+
+  .gh-repo-row{
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    padding:12px 16px; border-radius:12px; text-decoration:none;
+    transition:background .18s;
+  }
+  .gh-repo-row:hover{background:rgba(255,255,255,0.045);}
+  .gh-repo-main{display:flex; flex-direction:column; gap:2px; min-width:0;}
+  .gh-repo-name{font-family:var(--mono); font-size:13.5px; font-weight:600; color:var(--ink);}
+  .gh-repo-desc{
+    font-size:12px; color:var(--muted); overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:230px;
+  }
+  .gh-repo-meta{display:flex; align-items:center; gap:12px; flex-shrink:0;}
+  .gh-lang{display:flex; align-items:center; gap:5px; font-family:var(--mono); font-size:11px; color:var(--muted-2);}
+  .gh-lang i{width:8px; height:8px; border-radius:50%; display:block; flex-shrink:0;}
+  .gh-stars{font-family:var(--mono); font-size:11px; color:var(--amber);}
+
+  .gh-activity-row{
+    display:flex; align-items:baseline; gap:10px; padding:11px 16px; border-radius:12px;
+    text-decoration:none; font-family:var(--mono); font-size:12px;
+    transition:background .18s;
+  }
+  .gh-activity-row:hover{background:rgba(255,255,255,0.045);}
+  .gh-activity-repo{color:var(--cyan); flex-shrink:0;}
+  .gh-activity-msg{
+    color:var(--muted-2); overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; flex:1; min-width:0;
+  }
+  .gh-activity-time{color:var(--muted); flex-shrink:0; font-size:11px;}
+
+  .gh-more{text-align:center; padding-top:26px;}
+  .gh-more a{
+    font-family:var(--mono); font-size:12.5px; color:var(--muted); text-decoration:none;
+    border-bottom:1px solid var(--line); padding-bottom:2px;
+    transition:color .18s, border-color .18s;
+  }
+  .gh-more a:hover{color:var(--cyan); border-color:rgba(113,217,245,0.4);}
+
   /* ---------- Projetos ---------- */
   .proj-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:22px;}
   .proj-card{
@@ -592,6 +652,7 @@
     .goals-row{grid-template-columns:1fr;}
     .tracks-panel{grid-template-columns:1fr; gap:24px; padding:26px 24px;}
     .proj-grid{grid-template-columns:1fr;}
+    .gh-grid{grid-template-columns:1fr;}
     .contato-panel{grid-template-columns:1fr; padding:36px 28px; gap:30px;}
     .section-note{text-align:left;}
     .section-head{grid-template-columns:1fr;}
@@ -621,6 +682,7 @@
       <a href="#sobre">Sobre</a>
       <a href="#jornada">Jornada</a>
       <a href="#projetos">Projetos</a>
+      <a href="#github">GitHub</a>
       <a href="#contato">Contato</a>
     </nav>
     <div class="nav-right">
@@ -636,6 +698,7 @@
   <a href="#sobre">Sobre</a>
   <a href="#jornada">Jornada</a>
   <a href="#projetos">Projetos</a>
+  <a href="#github">GitHub</a>
   <a href="#contato">Contato</a>
   <span class="status-pill"><i></i>disponível</span>
 </div>
@@ -901,6 +964,36 @@
     </div>
   </section>
 
+  <!-- GITHUB -->
+  <section id="github">
+    <div class="section-head">
+      <span class="sec-num">06 / GitHub</span>
+      <h2 class="display">Direto do repositório</h2>
+      <p class="section-note">puxado ao vivo da API do GitHub, sem enfeitar nada</p>
+    </div>
+    <div class="gh-grid">
+      <div class="gh-panel">
+        <div class="gh-panel-top">
+          <div class="gh-dots"><span></span><span></span><span></span></div>
+          <span class="gh-panel-name">repos --sort=updated</span>
+        </div>
+        <div class="gh-panel-body" id="ghRepos">
+          <p class="gh-loading">carregando repositórios…</p>
+        </div>
+      </div>
+      <div class="gh-panel">
+        <div class="gh-panel-top">
+          <div class="gh-dots"><span></span><span></span><span></span></div>
+          <span class="gh-panel-name">git log --activity</span>
+        </div>
+        <div class="gh-panel-body" id="ghActivity">
+          <p class="gh-loading">carregando atividade…</p>
+        </div>
+      </div>
+    </div>
+    <div class="gh-more"><a href="https://github.com/markiimm" target="_blank" rel="noopener">Ver perfil completo no GitHub →</a></div>
+  </section>
+
   <!-- CONTATO -->
   <section id="contato">
     <div class="contato-panel">
@@ -1044,6 +1137,149 @@
   });
 </script>
 <script>
+  (function(){
+    const GH_USER = 'markiimm';
+    const reposEl = document.getElementById('ghRepos');
+    const activityEl = document.getElementById('ghActivity');
+
+    const LANG_COLORS = {
+      JavaScript:'#F0DB4F', TypeScript:'#4C8DFF', HTML:'#E96228', CSS:'#71D9F5',
+      Python:'#4EE39B', Lua:'#8C93FF', Shell:'#9AA6BA', PHP:'#8C93FF'
+    };
+
+    function el(tag, cls){ const e = document.createElement(tag); if(cls) e.className = cls; return e; }
+    function text(tag, cls, str){ const e = el(tag, cls); e.textContent = str; return e; }
+
+    function timeAgo(dateStr){
+      const diffMs = Date.now() - new Date(dateStr).getTime();
+      const mins = Math.floor(diffMs / 60000);
+      if(mins < 1) return 'agora';
+      if(mins < 60) return `há ${mins}min`;
+      const hours = Math.floor(mins / 60);
+      if(hours < 24) return `há ${hours}h`;
+      const days = Math.floor(hours / 24);
+      if(days < 30) return `há ${days}d`;
+      const months = Math.floor(days / 30);
+      if(months < 12) return `há ${months}m`;
+      return `há ${Math.floor(months / 12)}a`;
+    }
+
+    function showError(container, label){
+      container.innerHTML = '';
+      const p = el('p', 'gh-error');
+      p.append(`não consegui carregar ${label} agora (limite da API do GitHub) — `);
+      const a = text('a', null, 'ver direto no GitHub');
+      a.href = `https://github.com/${GH_USER}`;
+      a.target = '_blank'; a.rel = 'noopener';
+      p.appendChild(a);
+      container.appendChild(p);
+    }
+
+    async function loadRepos(){
+      try{
+        const res = await fetch(`https://api.github.com/users/${GH_USER}/repos?sort=updated&per_page=10`);
+        if(!res.ok) throw new Error('bad response');
+        const repos = (await res.json())
+          .filter(r => !r.fork)
+          .sort((a,b) => new Date(b.pushed_at) - new Date(a.pushed_at))
+          .slice(0,5);
+        reposEl.innerHTML = '';
+        if(!repos.length){ showError(reposEl, 'os repositórios'); return; }
+        repos.forEach(r => {
+          const row = el('a', 'gh-repo-row');
+          row.href = r.html_url; row.target = '_blank'; row.rel = 'noopener';
+
+          const main = el('div', 'gh-repo-main');
+          main.appendChild(text('span', 'gh-repo-name', r.name));
+          main.appendChild(text('span', 'gh-repo-desc', r.description || 'sem descrição'));
+
+          const meta = el('div', 'gh-repo-meta');
+          if(r.language){
+            const lang = el('span', 'gh-lang');
+            const dot = el('i');
+            dot.style.background = LANG_COLORS[r.language] || 'var(--muted-2)';
+            lang.appendChild(dot);
+            lang.appendChild(document.createTextNode(r.language));
+            meta.appendChild(lang);
+          }
+          meta.appendChild(text('span', 'gh-stars', `★ ${r.stargazers_count}`));
+
+          row.appendChild(main);
+          row.appendChild(meta);
+          reposEl.appendChild(row);
+        });
+      }catch(e){
+        showError(reposEl, 'os repositórios');
+      }
+    }
+
+    function describeEvent(e){
+      const repoName = e.repo.name.split('/')[1] || e.repo.name;
+      const repoUrl = `https://github.com/${e.repo.name}`;
+      switch(e.type){
+        case 'PushEvent': {
+          const branch = (e.payload.ref || '').split('/').pop();
+          return {
+            repoName,
+            msg: branch ? `push → ${branch}` : 'push',
+            url: e.payload.head ? `${repoUrl}/commit/${e.payload.head}` : repoUrl
+          };
+        }
+        case 'CreateEvent':
+          if(e.payload.ref_type === 'repository') return { repoName, msg: 'repositório criado', url: repoUrl };
+          if(e.payload.ref_type === 'branch') return { repoName, msg: `branch criada · ${e.payload.ref}`, url: repoUrl };
+          return null;
+        case 'PullRequestEvent':
+          return {
+            repoName, msg: `PR ${e.payload.action}: ${e.payload.pull_request.title}`.slice(0,64),
+            url: e.payload.pull_request.html_url
+          };
+        case 'IssuesEvent':
+          return {
+            repoName, msg: `issue ${e.payload.action}: ${e.payload.issue.title}`.slice(0,64),
+            url: e.payload.issue.html_url
+          };
+        case 'WatchEvent':
+          return { repoName, msg: 'deu star', url: repoUrl };
+        case 'PublicEvent':
+          return { repoName, msg: 'repositório tornado público', url: repoUrl };
+        default:
+          return null;
+      }
+    }
+
+    async function loadActivity(){
+      try{
+        const res = await fetch(`https://api.github.com/users/${GH_USER}/events/public?per_page=30`);
+        if(!res.ok) throw new Error('bad response');
+        const events = (await res.json())
+          .map(e => ({ e, d: describeEvent(e) }))
+          .filter(x => x.d)
+          .slice(0,6);
+        activityEl.innerHTML = '';
+        if(!events.length){
+          activityEl.appendChild(text('p', 'gh-loading', 'sem atividade pública recente'));
+          return;
+        }
+        events.forEach(({e, d}) => {
+          const row = el('a', 'gh-activity-row');
+          row.href = d.url;
+          row.target = '_blank'; row.rel = 'noopener';
+          row.appendChild(text('span', 'gh-activity-repo', d.repoName));
+          row.appendChild(text('span', 'gh-activity-msg', d.msg));
+          row.appendChild(text('span', 'gh-activity-time', timeAgo(e.created_at)));
+          activityEl.appendChild(row);
+        });
+      }catch(e){
+        showError(activityEl, 'a atividade');
+      }
+    }
+
+    loadRepos();
+    loadActivity();
+  })();
+</script>
+<script>
   const toggle = document.getElementById('menuToggle');
   const close = document.getElementById('menuClose');
   const mobileNav = document.getElementById('mobileNav');
@@ -1070,7 +1306,7 @@
   // revelação suave dos blocos ao entrar na viewport
   (function(){
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var blocks = document.querySelectorAll('.section-head, .sobre-grid, .timeline, .goals-row, .tracks-panel, .diff-panel, .ping-widget, .proj-grid, .contato-panel');
+    var blocks = document.querySelectorAll('.section-head, .sobre-grid, .timeline, .goals-row, .tracks-panel, .diff-panel, .ping-widget, .proj-grid, .gh-grid, .contato-panel');
     if(reduce || !('IntersectionObserver' in window)) return;
 
     blocks.forEach(function(el){ el.classList.add('reveal'); });
