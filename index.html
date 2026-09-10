@@ -883,7 +883,7 @@
   <section id="projetos">
     <div class="section-head">
       <span class="sec-num">05 / Projetos</span>
-      <h2 class="display">Seis projetos, de perto</h2>
+      <h2 class="display">Sete projetos, de perto</h2>
       <p class="section-note">contexto real, não só link de repositório</p>
     </div>
     <div class="proj-grid">
@@ -957,6 +957,18 @@
           <div class="proj-actions">
             <span class="proj-private">🚧 protótipo funcional — sem persistência</span>
             <button type="button" class="proj-link-btn" onclick="openLightbox('youneed','YouNeed — prospecção de negócios locais')">🔍 Ver screenshots</button>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb has-shot" style="background-image:linear-gradient(180deg, rgba(6,8,13,0.10) 30%, rgba(6,8,13,0.90) 100%), url('assets/img/thumb-centraldeoperacao.jpg');"><span>centraldeoperacao.vercel.app</span></div>
+        <div class="proj-body">
+          <h3>Central de Operações — dashboard de suporte N2</h3>
+          <p>Minha rotina real de analista de suporte N2 em portaria remota, em forma de dashboard: mosaico de câmeras ao vivo, status de 12 dispositivos (pfSense, MikroTik, leitores faciais, biometria, CFTV), fila de chamados por SLA e o fluxo padrão de atendimento — abertura, diagnóstico, execução, validação e encerramento, do WhatsApp até o teste com o morador.</p>
+          <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></div>
+          <div class="proj-actions">
+            <a href="https://centraldeoperacao.vercel.app/" class="proj-link">Ver site ao vivo</a>
+            <button type="button" class="proj-link-btn" onclick="openLightbox('centraldeoperacao','Central de Operações — dashboard de suporte N2')">🔍 Ver screenshots</button>
           </div>
         </div>
       </div>
@@ -1050,6 +1062,10 @@
       { src: "assets/img/gallery-youneed-2.png", caption: "YouNeed — funil com resultados" },
       { src: "assets/img/gallery-youneed-3.png", caption: "YouNeed — lead com LP gerada" },
       { src: "assets/img/gallery-youneed-4.png", caption: "YouNeed — administração e integrações" }
+    ],
+    centraldeoperacao: [
+      { src: "assets/img/gallery-centraldeoperacao-1.jpg", caption: "Central de Operações — mosaico de câmeras e dispositivos" },
+      { src: "assets/img/gallery-centraldeoperacao-2.jpg", caption: "Central de Operações — SLA, log de atendimento e sistemas" }
     ]
   };
   let currentGallery = [];
