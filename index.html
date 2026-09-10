@@ -1075,7 +1075,7 @@
   function thumbImageSrc(index){
     const thumb = document.querySelectorAll('.proj-grid .proj-thumb')[index];
     const bg = thumb ? getComputedStyle(thumb).backgroundImage : '';
-    const match = bg.match(/url\("?(data:image[^")]+)"?\)/);
+    const match = bg.match(/url\(["']?([^"')]+)["']?\)/);
     return match ? match[1] : '';
   }
 
