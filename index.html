@@ -883,7 +883,7 @@
   <section id="projetos">
     <div class="section-head">
       <span class="sec-num">05 / Projetos</span>
-      <h2 class="display">Sete projetos, de perto</h2>
+      <h2 class="display">Oito projetos, de perto</h2>
       <p class="section-note">contexto real, não só link de repositório</p>
     </div>
     <div class="proj-grid">
@@ -969,6 +969,18 @@
           <div class="proj-actions">
             <a href="https://centraldeoperacao.vercel.app/" class="proj-link">Ver site ao vivo</a>
             <button type="button" class="proj-link-btn" onclick="openLightbox('centraldeoperacao','Central de Operações — dashboard de suporte N2')">🔍 Ver screenshots</button>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb has-shot" style="background-image:linear-gradient(180deg, rgba(6,8,13,0.10) 30%, rgba(6,8,13,0.90) 100%), url('assets/img/thumb-figpro.jpg');"><span>projeto-figpro1.vercel.app</span></div>
+        <div class="proj-body">
+          <h3>FigPro — Figma para código</h3>
+          <p>Desafio de replicar um design do Figma em HTML e CSS puro, pixel a pixel: tipografia grande e ilustrada, seções com parallax, catálogo de produto e microinterações — sem framework, sem atalho. Projeto da trilha Codeboost, focado em fidelidade visual e organização de CSS em uma página só, bem mais longa e detalhada que meus outros projetos.</p>
+          <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>Figma to code</span></div>
+          <div class="proj-actions">
+            <a href="https://projeto-figpro1.vercel.app/" class="proj-link">Ver site ao vivo</a>
+            <button type="button" class="proj-link-btn" onclick="openLightbox('figpro','FigPro — Figma para código')">🔍 Ver screenshots</button>
           </div>
         </div>
       </div>
@@ -1066,6 +1078,11 @@
     centraldeoperacao: [
       { src: "assets/img/gallery-centraldeoperacao-1.jpg", caption: "Central de Operações — mosaico de câmeras e dispositivos" },
       { src: "assets/img/gallery-centraldeoperacao-2.jpg", caption: "Central de Operações — SLA, log de atendimento e sistemas" }
+    ],
+    figpro: [
+      { src: "assets/img/gallery-figpro-1.jpg", caption: "FigPro — hero" },
+      { src: "assets/img/gallery-figpro-2.jpg", caption: "FigPro — tipografia \"Stories\"" },
+      { src: "assets/img/gallery-figpro-3.jpg", caption: "FigPro — catálogo de stickers" }
     ]
   };
   let currentGallery = [];
